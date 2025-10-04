@@ -1,0 +1,23 @@
+{
+  "name": "tg-userbot-plugins-ts",
+  "version": "1.2.0",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "session": "ts-node tools/session_gen.ts",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "telegram": "^2.26.22",
+    "chokidar": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "input": "^1.0.1",
+    "colorette": "^2.0.20"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
