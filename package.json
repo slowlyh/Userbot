@@ -1,5 +1,5 @@
 {
-  "name": "tg-userbot-plugins-ts",
+  "name": "userbot-ts",
   "version": "1.2.0",
   "type": "commonjs",
   "main": "dist/index.js",
