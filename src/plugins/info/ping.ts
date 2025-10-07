@@ -11,19 +11,37 @@
      * GitHub: https://github.com/slowlyh
      * Official: https://hyuu.tech
  */
-
-import type { PluginModule } from '../types';
+import type { PluginModule } from '../../types.js';
 
 const plugin: PluginModule = {
   name: 'ping',
+  category: 'info',
   commands: ['ping'],
+  access: 'all',
   handler: async ({ event }, ctx) => {
     const peer = (event as any).chatId ?? (event.message as any)?.chatId;
     const start = Date.now();
-    await ctx.client.sendMessage(peer, { message: 'Pinging...' });
-    const ms = Date.now() - start;
-    await ctx.client.sendMessage(peer, { message: `Pong! \`${ms}ms\``, parseMode: 'markdown' as any });
+    
+    try {
+      const msg = await ctx.client.sendMessage(peer, { 
+        message: 'Pinging...' 
+      });
+      
+      const ms = Date.now() - start;
+      
+      await ctx.client.editMessage(peer, { 
+        message: msg.id,
+        text: `Pong! \`${ms}ms\``,
+        parseMode: 'markdown'
+      });
+    } catch (error) {
+      const ms = Date.now() - start;
+      await ctx.client.sendMessage(peer, { 
+        message: `Pong! \`${ms}ms\``,
+        parseMode: 'markdown'
+      });
+    }
   }
 };
 
-module.exports = plugin;
+export default plugin;

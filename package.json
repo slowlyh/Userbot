@@ -1,23 +1,26 @@
 {
-  "name": "userbot-ts",
-  "version": "1.2.0",
-  "type": "commonjs",
-  "main": "dist/index.js",
+  "name": "ts-userbot",
+  "version": "3.0.1",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "ts-node src/index.ts",
-    "session": "ts-node tools/session_gen.ts",
+    "dev": "node --enable-source-maps --loader ts-node/esm --no-warnings src/index.ts",
+    "start": "node --enable-source-maps --loader ts-node/esm --no-warnings src/index.ts",
+    "session": "node --enable-source-maps --loader ts-node/esm --no-warnings tools/session_gen.ts",
     "build": "tsc -p ."
   },
   "dependencies": {
-    "telegram": "^2.26.22",
+    "axios": "^1.7.7",
     "chokidar": "^3.6.0",
+    "colorette": "^2.0.20",
     "dotenv": "^16.4.5",
     "input": "^1.0.1",
-    "colorette": "^2.0.20"
+    "path": "^0.12.7",
+    "telegram": "^2.18.2"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
   }
 }
