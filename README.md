@@ -68,7 +68,6 @@ API_HASH=your_api_hash_here
 STRING_SESSION=
 COMMAND_PREFIX=.
 OWNER_ID=123456789,@yourusername
-WHITELIST=
 ```
 
 ### 3️⃣ Generate Session
@@ -89,6 +88,7 @@ npm run dev
 |--------|----------|
 | Display Menu | `/menu` |
 | Ping Test | `/ping` |
+| Update | `/update src/index.ts` 
 | Send Broadcast | `/broadcast group Hello everyone!` |
 | Markdown Mode | `/broadcast --md **Update incoming!**` |
 | Channel Only | `/broadcast channel` |
