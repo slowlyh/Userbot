@@ -20,17 +20,15 @@ npm run session
 ```
 Your session will be stored in `session/string.json` automatically.
 
-### ✅ Smart Whitelist
-Limit commands to specific groups or channels with a few keystrokes.
+### ✅ Blacklist
+blacklist groups or channels.
 
 ### 📢 Advanced Broadcast
 Send text or media to multiple groups/channels simultaneously with full control:
-- Target filters: `--only=groups` / `--only=channels`
-- Exclusions: `--except=<id|username>`
-- Limits: `--limit=N`
-- Markdown / HTML parsing
+- Target type: `group` / `channel` / `auto`
+- Markdown
 - Auto FloodWait recovery
-- Reply-based media broadcast (`.broadcastmedia`)
+- Reply-based media broadcast (`.broadcast type text + reply image`)
 
 ---
 
@@ -89,18 +87,19 @@ npm run dev
 
 | Action | Example |
 |--------|----------|
-| Display Menu | `.menu` |
-| Ping Test | `.ping` |
-| Send Broadcast | `.broadcast Hello everyone!` |
-| Markdown Mode | `.broadcast --md **Update incoming!**` |
-| Channel Only | `.broadcast --only=channels` |
-| Media Broadcast | *(Reply to a media)* `.broadcastmedia` |
+| Display Menu | `/menu` |
+| Ping Test | `/ping` |
+| Send Broadcast | `/broadcast group Hello everyone!` |
+| Markdown Mode | `/broadcast --md **Update incoming!**` |
+| Channel Only | `/broadcast channel` |
+| Group Only | `/broadcast group` |
+| Media Broadcast | *(Reply to a media)* `.broadcast group Hello` |
 
 ---
 
 ## 💡 Tips & Notes
 
-- Use `.whitelist` to toggle access for specific chats.
+- Use `.blacklist` to blacklist group/channel.
 - Hot reload works automatically on every plugin save.
 - Recommended Node.js: **v20+** for best performance.
 

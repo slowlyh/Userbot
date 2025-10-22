@@ -16,6 +16,7 @@
     "dotenv": "^16.4.5",
     "input": "^1.0.1",
     "path": "^0.12.7",
+    "sharp": "^0.34.4",
     "telegram": "^2.18.2"
   },
   "devDependencies": {
